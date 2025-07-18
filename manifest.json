@@ -4,6 +4,11 @@
 	"version": "1.0.3",
 	"author": "Marvin Schopf",
 	"description": "Prevent websites from tracking whether you are currently in another tab/ window.",
+	"permissions": ["storage"],
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": true
+	},
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],

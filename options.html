@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Disable Page Visibility API - Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Disable Page Visibility API - Settings</h1>
+        
+        <div class="mode-selection">
+            <h2>Mode</h2>
+            <label>
+                <input type="radio" name="mode" value="all" id="mode-all" checked>
+                <span>Apply to all websites (default)</span>
+            </label>
+            <label>
+                <input type="radio" name="mode" value="whitelist" id="mode-whitelist">
+                <span>Apply only to websites matching patterns below (whitelist)</span>
+            </label>
+            <label>
+                <input type="radio" name="mode" value="blacklist" id="mode-blacklist">
+                <span>Apply to all websites except those matching patterns below (blacklist)</span>
+            </label>
+        </div>
+        
+        <div class="patterns-section" id="patterns-section" style="display: none;">
+            <h2>Domain Patterns</h2>
+            <p class="info">Enter one regex pattern per line. Examples:</p>
+            <ul class="examples">
+                <li><code>^https://.*\.example\.com/.*</code> - Matches all subdomains of example.com</li>
+                <li><code>^https://github\.com/.*</code> - Matches all GitHub pages</li>
+                <li><code>.*youtube\.com.*</code> - Matches any URL containing youtube.com</li>
+            </ul>
+            <textarea id="patterns" rows="10" placeholder="Enter regex patterns, one per line..."></textarea>
+        </div>
+        
+        <div class="button-group">
+            <button id="save">Save Settings</button>
+            <span id="status"></span>
+        </div>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>
